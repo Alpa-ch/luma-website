@@ -1,0 +1,140 @@
+@import "../sass/common/global"
+@import "../sass/untils/fonts"
+@import "../sass/common/header"
+@import "../sass/untils/variables"
+@import "../sass/mixins/media"
+	
+.banner
+	//position: relative
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+
+	background: linear-gradient(180deg, rgba(24, 24, 29, 0.45), rgba(24, 24, 29, 0.45)), url(../images/dest/img1.jpg)
+	background-position: 50% 50%
+	background-size: auto, cover
+	height: 640px
+
+.banner__title
+	margin:
+		top: 0
+		bottom: 30px
+	color: $COLOR-WHITE
+	font-size: 80px
+	font-weight: 300
+	text-align: center
+
+	@include _768
+        font-size: 34px
+
+.button-link
+	display: inline-block
+	padding: 18px 30px
+	background-color: $COLOR-WHITE
+
+	&:hover
+		cursor: pointer
+		
+	&:hover .button-link__right-arrow
+		transform: translateX(8px)
+
+	@include _480
+		margin: 0 0
+		width: calc(100% - 40px)
+
+.button-link__wrapper
+	display: flex
+	justify-content: center
+
+.button-link__text
+	display: inline-block
+	text-align: center
+	font-weight: 500
+	color: $COLOR-BLACK
+
+.button-link__right-arrow
+	margin-left: 20px
+	transform: translateX(0)
+	transition: transform 0.2s
+
+.sub-banner
+	display: flex
+	justify-content: space-between
+	max-width: 1200px
+	margin: 60px auto 0
+
+.sub-banner__company-logo
+	width: 103px
+	opacity: 0.3
+
+.container
+	max-width: 1200px
+	width: 100%
+	margin: 0 auto
+	display: grid
+	grid-template-columns: 273px 36px 273px 36px 273px 36px 273px
+
+.about-products
+	grid-template-rows: auto auto auto auto
+
+.about-products__title
+	grid-column: 1 / 4
+	font-size: 44px
+	font-weight: 300
+	margin:
+		top: 100px
+		bottom: 75px
+
+.about-item__img
+	object-fit: cover
+	width: 100%
+
+.about-item--item-1
+	grid-column: 1 / 4
+	grid-row: 2 / 3
+
+.about-item__img--item-1
+	height: 700px
+
+.about-item--item-2
+	grid-column: 5 / 8
+	grid-row: 2 / 3
+
+.about-item__img--item-2
+	height: 520px
+
+.about-products__author
+	grid-column: 1 / 2
+	grid-row: 3 / 4
+	margin-top: 65px
+	font-size: 24px
+	font-weight: 300
+	line-height: 32px
+
+.about-products__description
+	grid-column: 5 / 8
+	grid-row: 3 / 4
+	margin-top: 65px
+	font-size: 16px
+	font-weight: 300
+	line-height: 26px
+	color: #333
+	opacity: 0.7
+
+.about-products__button-link
+	margin-top: 50px
+	grid-column: 5 / 8
+	grid-row: 4 / 5
+
+.button-link--big-grid-button
+	padding: 30px 36px
+
+.button-link--button-border
+	border: 1px solid rgb(235, 237, 238)
+
+.button-link__text--m-size
+	font-size: 14px
+
+.button-link__text--l-size
+	font-size: 16px

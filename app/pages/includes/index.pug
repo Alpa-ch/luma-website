@@ -1,0 +1,40 @@
+extends ../common/layout
+
+block append head
+    link(rel="stylesheet" , href="css/index.css")
+
+block content
+    div.banner
+        h1.banner__title.font-WorkSans 
+            | Stylish modern <br/>
+            | lighting options
+        a(href="#").banner__button-link.button-link
+            div.button-link__wrapper
+                span.button-link__text.button-link__text--m-size.font-WorkSans SHOP THE FALL COLLECTION
+                img(src="svg/right-arrow.svg", alt="").button-link__right-arrow
+    div.sub-banner
+        img(src="svg/sony.svg", alt="sony").sub-banner__company-logo
+        img(src="svg/webflow.svg", alt="webflow").sub-banner__company-logo
+        img(src="svg/samsung.svg", alt="samsung").sub-banner__company-logo
+        img(src="svg/logitech.svg", alt="logitech").sub-banner__company-logo
+        img(src="svg/lenovo.svg", alt="lenovo").sub-banner__company-logo
+        img(src="svg/waitrose.svg", alt="waitrose").sub-banner__company-logo
+    main.main-content
+        div.about-products.container
+            h3.about-products__title.font-WorkSans The right light can transform any environment
+            div.about-products__item.about-item.about-item--item-1
+                img(src="images/dest/bola-disk.jpg", alt="bola-disk").about-item__img.about-item__img--item-1
+                a(href="").about-item__link
+            div.about-products__item.about-item.about-item--item-2
+                img(src="images/dest/bola-halo.jpg", alt="bola-halo").about-item__img.about-item__img--item-2
+                a(href="").about-item__link
+            p.about-products__author.font-WorkSans Meet the Belmont, by Pablo Designs
+            p.about-products__description.font-WorkSans By fusing the highest technical sensibilities 
+                                        | with the most appropriate material palette, 
+                                        | Pablo is able to create unique, timeless 
+                                        | designs with the power to transform any 
+                                        | environment.
+            a(href="#").about-products__button-link.button-link.button-link--big-grid-button.button-link--button-border
+                div.button-link__wrapper
+                    span.button-link__text.button-link__text--l-size.font-WorkSans DISCOVER MORE PRODUCTS
+                    img(src="svg/right-arrow.svg", alt="").button-link__right-arrow

@@ -1,0 +1,65 @@
+@import "../sass/mixins/media"
+    
+.header
+    display: flex
+    align-items: center
+    
+
+    height: 70px
+    padding: 22px 36px
+
+    &__menu-panel
+        margin-left: auto
+        display: flex
+        // justify-content: flex-end
+
+    &__nav
+        display: flex
+        align-items: center
+
+        @include _990
+            display: none
+
+        &-link
+            margin: 0 10px
+
+    &__cart
+        margin-left: 15px
+
+    &__menu-button
+        // display: none
+
+
+.cart
+    display: flex
+
+    &:hover
+        cursor: pointer
+
+    &__icon
+        width: 16px
+        object-fit: contain
+
+    &__counter
+        margin-left: 8px
+        font: 12px/26px 'WorkSans'
+        color: #18181d
+
+.cart:hover .cart__icon,
+.cart:hover .cart__counter
+    opacity: 70%
+
+.nav-link
+    font: 12px/26px 'WorkSans'
+    color: #18181d
+
+.menu-button
+    display: none
+    margin-left: 24px
+
+    &__icon
+        width: 20px
+        object-fit: contain
+
+    @include _990
+        display: flex
