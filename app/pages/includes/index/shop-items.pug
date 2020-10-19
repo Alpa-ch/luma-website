@@ -1,0 +1,8 @@
+mixin shop-item(imgSrc, alt, name, price, href="")
+    li.shop__lightning-item.lightning-item
+        a(class!=attributes.class href=href).lightning-item__wrapper
+            img(src=imgSrc, alt=alt).lightning-item__img
+            div.lightning-item__view-product-button.view-product-button.view-product-button--m-size.view-product-button--white VIEW PRODUCT
+        a(href=href).lightning-item__name= name
+        p.lightning-item__price= "$ " + price + " USD"
+        

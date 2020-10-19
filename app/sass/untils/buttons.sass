@@ -1,0 +1,102 @@
+// BUTTON WITH ARROW
+.button
+    display: flex
+    justify-content: center
+    align-items: center
+
+    &:hover .button__right-arrow
+        transform: translateX(8px)
+
+.button__text
+    color: $BLACK
+    font-size: 14px
+    font-weight: 500
+    line-height: 24px
+    text-align: center
+
+.button__right-arrow
+    margin-left: 20px
+    transition: transform 0.2s
+
+.button--justify-space-between
+    justify-content: space-between
+
+.button--white
+    background-color: $WHITE
+
+.button--m-size
+    padding: 18px 30px
+
+.button--l-size
+    padding: 30px 36px
+
+.button--white-smoke-border
+    border: 1px solid $WHITE-SMOKE
+
+// VIEW PRODUCT BUTTON
+.view-product-button
+    z-index: 1
+    position: absolute
+    width: calc(100% - 30px)
+    bottom: 0
+    left: 50%
+    transition: transform 0.15s, opacity 0.15s
+    transform: translateX(-50%)
+    opacity: 0
+    font-size: 14px
+    font-weight: 500
+    line-height: 24px
+    color: $BLACK
+    text-align: center
+
+.view-product-button--m-size
+    padding: 18px 30px
+
+.view-product-button--white
+    background-color: $WHITE
+
+// Hover properties for items
+@mixin view-products-hover
+    opacity: 1
+    transform: translate(-50%, -15px)
+
+@mixin view-products-after-fade
+    content: ''
+    height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    position: absolute
+    background-color: $DARK
+    opacity: 0
+    transition: opacity 0.2s
+
+@mixin view-products-after-fade-hover
+    opacity: 0.15
+
+// EXAMPLE:
+
+// PUG:
+// li.shop__lightning-item.lightning-item
+//     a(href=href).lightning-item__wrapper
+//         img(src=imgSrc, alt=alt).lightning-item__img
+//         div.lightning-item__view-product-button.view-product-button.view-product-button--m-size.view-product-button--white VIEW PRODUCT
+//     a(href=href).lightning-item__name= name
+//     p.lightning-item__price= "$ " + price + " USD"
+
+// CSS:
+// .lightning-item__wrapper
+//     display: block
+//     position: relative
+//     width: 100%
+//     height: 100%
+//     max-height: 360px
+
+//     &:hover::after
+//         @include view-products-after-fade-hover
+
+//     &:hover .lightning-item__view-product-button
+//         @include view-products-hover
+
+// .lightning-item__wrapper::after
+//     @include view-products-after-fade

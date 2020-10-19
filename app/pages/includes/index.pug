@@ -1,40 +1,54 @@
 extends ../common/layout
+include index/shop-items.pug
 
 block append head
     link(rel="stylesheet" , href="css/index.css")
 
 block content
-    div.banner
-        h1.banner__title.font-WorkSans 
-            | Stylish modern <br/>
-            | lighting options
-        a(href="#").banner__button-link.button-link
-            div.button-link__wrapper
-                span.button-link__text.button-link__text--m-size.font-WorkSans SHOP THE FALL COLLECTION
-                img(src="svg/right-arrow.svg", alt="").button-link__right-arrow
-    div.sub-banner
-        img(src="svg/sony.svg", alt="sony").sub-banner__company-logo
-        img(src="svg/webflow.svg", alt="webflow").sub-banner__company-logo
-        img(src="svg/samsung.svg", alt="samsung").sub-banner__company-logo
-        img(src="svg/logitech.svg", alt="logitech").sub-banner__company-logo
-        img(src="svg/lenovo.svg", alt="lenovo").sub-banner__company-logo
-        img(src="svg/waitrose.svg", alt="waitrose").sub-banner__company-logo
-    main.main-content
-        div.about-products.container
-            h3.about-products__title.font-WorkSans The right light can transform any environment
-            div.about-products__item.about-item.about-item--item-1
-                img(src="images/dest/bola-disk.jpg", alt="bola-disk").about-item__img.about-item__img--item-1
-                a(href="").about-item__link
-            div.about-products__item.about-item.about-item--item-2
-                img(src="images/dest/bola-halo.jpg", alt="bola-halo").about-item__img.about-item__img--item-2
-                a(href="").about-item__link
-            p.about-products__author.font-WorkSans Meet the Belmont, by Pablo Designs
-            p.about-products__description.font-WorkSans By fusing the highest technical sensibilities 
-                                        | with the most appropriate material palette, 
-                                        | Pablo is able to create unique, timeless 
-                                        | designs with the power to transform any 
-                                        | environment.
-            a(href="#").about-products__button-link.button-link.button-link--big-grid-button.button-link--button-border
-                div.button-link__wrapper
-                    span.button-link__text.button-link__text--l-size.font-WorkSans DISCOVER MORE PRODUCTS
-                    img(src="svg/right-arrow.svg", alt="").button-link__right-arrow
+    main.content
+        div.content__banner.banner
+            h1.banner__title Stylish modern lighting options
+            a(href="").banner__button.button.button--white.button--m-size
+                span.button__text SHOP THE FALL COLLECTION
+                img(src="svg/right-arrow.svg", alt="").button__right-arrow
+        div.content__brands.brands
+            img(src="svg/sony.svg", alt="Sony logo").brands__logo
+            img(src="svg/webflow.svg", alt="Webflow logo").brands__logo
+            img(src="svg/samsung.svg", alt="Samsung logo").brands__logo
+            img(src="svg/logitech.svg", alt="Logitech logo").brands__logo
+            img(src="svg/lenovo.svg", alt="Lenovo logo").brands__logo
+            img(src="svg/waitrose.svg", alt="Waitrose logo").brands__logo
+        article.content__favourite-products.favourite-products
+            h2.favourite-products__title The right light can transform any environment
+            div.favourite-products__item
+                a(href="").favourite-products__item-wrapper
+                    img(src="images/dest/BolaDisc.jpg", alt="").favourite-products__item-img
+                    div.favourite-products__view-product-button.view-product-button.view-product-button--m-size.view-product-button--white VIEW PRODUCT
+            div.favourite-products__item
+                a(href="").favourite-products__item-wrapper
+                    img(src="images/dest/BolaHalo.jpg", alt="").favourite-products__item-img
+                    div.favourite-products__view-product-button.view-product-button.view-product-button--m-size.view-product-button--white VIEW PRODUCT
+            p.favourite-products__author Meet the Belmont, by Pablo Designs
+            p.favourite-products__description By fusing the highest technical sensibilities 
+                                            | with the most appropriate material palette, 
+                                            | Pablo is able to create unique, timeless designs 
+                                            | with the power to transform any environment.
+            a(href="").favourite-products__button.button.button--white.button--l-size.button--white-smoke-border.button--justify-space-between
+                span.button__text DISCOVER MORE PRODUCTS
+                img(src="svg/right-arrow.svg", alt="").button__right-arrow
+        article.content__shop.shop
+            h2.shop__title SHOP LIGHTING
+            p.shop__description Stylish modern lighting options
+            ul.shop__lightning-item-list
+                +shop-item("images/dest/Giraffa.jpeg", "Giraffa", "Giraffa", "99.99")
+                +shop-item("images/dest/Solis.jpeg", "Solis", "Solis", "79.99")
+                +shop-item("images/dest/CornerOffice.jpeg", "CornerOffice", "CornerOffice", "190.00")
+                +shop-item("images/dest/Cielo.jpeg", "Cielo", "Cielo", "89.99")
+                +shop-item("images/dest/UmaMini.jpg", "UmaMini", "UmaMini", "155.99")(class="lightning-item__wrapper--on-sale")
+                +shop-item("images/dest/Contour.jpg", "Contour", "Contour", "245.99")
+                +shop-item("images/dest/Circa.jpg", "Circa", "Circa", "398.99")(class="lightning-item__wrapper--on-sale")
+                +shop-item("images/dest/BolaSphere.jpg", "BolaSphere", "BolaSphere", "789.99")
+                +shop-item("images/dest/BolaDisc.jpg", "BolaDisc", "BolaDisc", "1,125.99")(class="lightning-item__wrapper--featured")
+                +shop-item("images/dest/Belmont.jpg", "Belmont", "Belmont", "717.99")
+                +shop-item("images/dest/BelOcchio.jpg", "BelOcchio", "BelOcchio", "515.99")
+                +shop-item("images/dest/BolaHalo.jpg", "BolaHalo", "BolaHalo", "159.99")(class="lightning-item__wrapper--featured")

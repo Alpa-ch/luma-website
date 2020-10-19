@@ -1,65 +1,57 @@
-@import "../sass/mixins/media"
-    
 .header
+    padding: 22px 36px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.header__home-page-link
+    &:hover
+        opacity: 0.7
+
+.header__wrapper
     display: flex
     align-items: center
-    
 
-    height: 70px
-    padding: 22px 36px
+.header__nav
+    @include _990
+        display: none
 
-    &__menu-panel
-        margin-left: auto
-        display: flex
-        // justify-content: flex-end
-
-    &__nav
-        display: flex
-        align-items: center
-
-        @include _990
-            display: none
-
-        &-link
-            margin: 0 10px
-
-    &__cart
-        margin-left: 15px
-
-    &__menu-button
-        // display: none
-
-
-.cart
-    display: flex
+.header__nav-link
+    margin:
+        left: 10px
+        right: 10px
+    font-weight: 500
+    font-size: 12px
+    line-height: 26px
+    color: $DARK
 
     &:hover
-        cursor: pointer
+        opacity: 0.7
 
-    &__icon
-        width: 16px
-        object-fit: contain
+.header__buy-cart
+    margin-left: 15px
+    display: flex
+    align-items: center
 
-    &__counter
-        margin-left: 8px
-        font: 12px/26px 'WorkSans'
-        color: #18181d
+    &:hover
+        opacity: 0.7
 
-.cart:hover .cart__icon,
-.cart:hover .cart__counter
-    opacity: 70%
+.header__buy-cart-icon
+    width: 16px
 
-.nav-link
-    font: 12px/26px 'WorkSans'
-    color: #18181d
+.header__buy-cart-counter
+    margin-left: 8px
+    font-weight: 500
+    font-size: 12px
+    color: $DARK
 
-.menu-button
+.header__nav-menu
     display: none
     margin-left: 24px
 
-    &__icon
-        width: 20px
-        object-fit: contain
-
     @include _990
-        display: flex
+        display: block
+
+.header__nav-menu-icon
+    vertical-align: middle
+    width: 20px

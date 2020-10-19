@@ -1,140 +1,294 @@
-@import "../sass/common/global"
-@import "../sass/untils/fonts"
-@import "../sass/common/header"
-@import "../sass/untils/variables"
-@import "../sass/mixins/media"
-	
-.banner
-	//position: relative
-	display: flex
-	flex-direction: column
-	align-items: center
-	justify-content: center
+@import 'common/global'
 
-	background: linear-gradient(180deg, rgba(24, 24, 29, 0.45), rgba(24, 24, 29, 0.45)), url(../images/dest/img1.jpg)
-	background-position: 50% 50%
-	background-size: auto, cover
-	height: 640px
+.banner
+    background-image: linear-gradient(180deg, rgba(24, 24, 29, 0.45), 
+    rgba(24, 24, 29, 0.45)),
+    url("/images/dest/img1.jpg")
+    
+    background-size: cover
+    background-position: 50% 50%
+    height: 640px
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    @include _768
+        height: 600px
+
+    @include _480
+        padding: 0 16px
 
 .banner__title
-	margin:
-		top: 0
-		bottom: 30px
-	color: $COLOR-WHITE
-	font-size: 80px
-	font-weight: 300
-	text-align: center
+    max-width: 570px
+    margin: 0 0 30px
+    font-size: 80px
+    font-weight: 300
+    line-height: 96px
+    color: $WHITE
 
-	@include _768
+    @include _768
+        max-width: 242px
+        font-size: 34px
+        line-height: 42px
+
+.banner__button
+    @include _480
+        width: 100%
+
+.content__brands
+    margin: 50px auto 100px
+    @include max-page-width    
+    @include page-padding
+
+.brands
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: auto
+    grid-column-gap: 36px
+    grid-row-gap: 30px
+
+    @include _990
+        grid-column-gap: 24px
+
+    @include _768
+        grid-column-gap: 20px
+
+    @include _480
+        grid-column-gap: 12px
+        grid-template-columns: repeat(3, 1fr)
+
+.brands__logo
+    max-width: 103px
+    width: 100%
+    justify-self: center
+    align-self: center
+    opacity: 0.3
+
+    @include _480
+        max-width: 100%
+
+.content__favourite-products
+    margin: 0 auto
+    @include max-page-width    
+    @include page-padding
+
+.favourite-products
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: auto minmax(400px, 700px) auto auto
+    grid-column-gap: 36px
+    grid-row-gap: 36px
+
+    @include _990
+        grid-template-rows: auto
+        grid-column-gap: 24px
+        grid-row-gap: 30px
+    
+    @include _768
+        grid-column-gap: 20px
+
+    @include _480
+        grid-column-gap: 12px
+
+.favourite-products__title
+    grid-column: 1 / span 2
+    font-size: 44px
+    font-weight: 300
+    line-height: 52px
+
+    @include _990
+        grid-column: span 4
+
+    @include _768
         font-size: 34px
 
-.button-link
-	display: inline-block
-	padding: 18px 30px
-	background-color: $COLOR-WHITE
+.favourite-products__item:nth-of-type(2n-1)
+    grid-column: 1 / span 2
 
-	&:hover
-		cursor: pointer
-		
-	&:hover .button-link__right-arrow
-		transform: translateX(8px)
+    @include _990
+        grid-column: span 4
 
-	@include _480
-		margin: 0 0
-		width: calc(100% - 40px)
+.favourite-products__item:nth-of-type(2n)
+    grid-column: span 2
 
-.button-link__wrapper
-	display: flex
-	justify-content: center
+    @include _990
+        grid-column: span 3
 
-.button-link__text
-	display: inline-block
-	text-align: center
-	font-weight: 500
-	color: $COLOR-BLACK
+    @include _768
+        grid-column: span 4
 
-.button-link__right-arrow
-	margin-left: 20px
-	transform: translateX(0)
-	transition: transform 0.2s
+.favourite-products__author
+    grid-column: 1
+    margin: 15px 0 0 0
+    font-size: 24px
+    font-weight: 300
+    line-height: 32px
 
-.sub-banner
-	display: flex
-	justify-content: space-between
-	max-width: 1200px
-	margin: 60px auto 0
+    @include _990
+        grid-column: span 2
 
-.sub-banner__company-logo
-	width: 103px
-	opacity: 0.3
+    @include _768
+        grid-column: span 4
 
-.container
-	max-width: 1200px
-	width: 100%
-	margin: 0 auto
-	display: grid
-	grid-template-columns: 273px 36px 273px 36px 273px 36px 273px
+.favourite-products__description
+    grid-column: 3 / span 2
+    margin: 0 0 0 0
+    font-size: 16px
+    line-height: 26px
+    color: $DARK
+    opacity: 0.7
 
-.about-products
-	grid-template-rows: auto auto auto auto
+    @include _990
+        grid-column: span 2
 
-.about-products__title
-	grid-column: 1 / 4
-	font-size: 44px
-	font-weight: 300
-	margin:
-		top: 100px
-		bottom: 75px
+    @include _768
+        grid-column: span 4
 
-.about-item__img
-	object-fit: cover
-	width: 100%
+.favourite-products__button
+    grid-column: 3 / span 2
 
-.about-item--item-1
-	grid-column: 1 / 4
-	grid-row: 2 / 3
+    @include _990
+        grid-column: span 4
 
-.about-item__img--item-1
-	height: 700px
+.favourite-products__item-wrapper
+    display: block
+    position: relative
+    width: 100%
+    max-height: 700px
 
-.about-item--item-2
-	grid-column: 5 / 8
-	grid-row: 2 / 3
+    &:hover::after
+        @include view-products-after-fade-hover
 
-.about-item__img--item-2
-	height: 520px
+    &:hover .favourite-products__view-product-button
+        @include view-products-hover
 
-.about-products__author
-	grid-column: 1 / 2
-	grid-row: 3 / 4
-	margin-top: 65px
-	font-size: 24px
-	font-weight: 300
-	line-height: 32px
+.favourite-products__item-wrapper::after
+    @include view-products-after-fade
 
-.about-products__description
-	grid-column: 5 / 8
-	grid-row: 3 / 4
-	margin-top: 65px
-	font-size: 16px
-	font-weight: 300
-	line-height: 26px
-	color: #333
-	opacity: 0.7
+.favourite-products__item-img
+    width: 100% // object-fit parent div
+    height: 100% // object-fit parent div
+    display: block // remove anon boxes
+    object-fit: cover
+    max-height: 700px
 
-.about-products__button-link
-	margin-top: 50px
-	grid-column: 5 / 8
-	grid-row: 4 / 5
+    @include _990
+        max-height: 640px
 
-.button-link--big-grid-button
-	padding: 30px 36px
+    @include _768
+        max-height: 460px
 
-.button-link--button-border
-	border: 1px solid rgb(235, 237, 238)
+.content__shop
+    margin: 0 auto
+    @include max-page-width    
+    @include page-padding
 
-.button-link__text--m-size
-	font-size: 14px
+.shop__title
+    font-size: 12px
+    font-weight: 500
+    line-height: 20px
+    color: $DARK
+    opacity: 0.7
+    margin:
+        top: 100px
+        bottom: 10px
 
-.button-link__text--l-size
-	font-size: 16px
+.shop__description
+    font-size: 30px
+    font-weight: 300
+    line-height: 38px
+    margin:
+        top: 0
+        bottom: 100px
+
+.shop__lightning-item-list
+    margin: 
+        top: 0
+    list-style-type: none
+    padding: 0
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: auto
+    grid-column-gap: 36px
+    grid-row-gap: 36px
+
+    @include _990
+        grid-template-columns: repeat(2, 1fr)
+
+    @include _768
+        grid-template-columns: repeat(1, 1fr)
+
+.lightning-item
+    position: relative
+
+.lightning-item__img
+    display: block
+    width: 100%
+    height: 100%
+    max-height: 360px
+    object-fit: cover
+    object-position: 50% 50%
+
+.lightning-item__name
+    display: block
+    margin: 26px 0 0
+    font-size: 16px
+    line-height: 26px
+    font-weight: 400
+    color: $DARK
+
+    &:hover
+        opacity: 0.7
+
+.lightning-item__price
+    margin: 
+        top: 10px
+        bottom: 15px
+    font-size: 24px
+    font-weight: 300
+    line-height: 32px
+    color: $DARK
+
+.lightning-item__wrapper
+    display: block
+    position: relative
+    width: 100%
+    // height: 100%
+    height: 360px
+
+    &:hover::after
+        @include view-products-after-fade-hover
+
+    &:hover .lightning-item__view-product-button
+        @include view-products-hover
+
+.lightning-item__wrapper::after
+    @include view-products-after-fade
+
+.lightning-item__wrapper--on-sale::before
+    z-index: 1
+    content: 'ON SALE'
+    position: absolute
+    top: 0
+    right: 0
+    padding: 10px 22px
+    font-size: 12px
+    font-weight: 500
+    line-height: 20px
+    color: $WHITE
+    background-color: $DARK
+
+.lightning-item__wrapper--featured::before
+    z-index: 1
+    content: 'FEATURED'
+    position: absolute
+    top: 0
+    left: 0
+    padding: 10px 22px
+    font-size: 12px
+    font-weight: 500
+    line-height: 20px
+    color: $DARK
+    background-color: $WHITE
