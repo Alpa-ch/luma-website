@@ -21,7 +21,8 @@ function browsersync() {
 	browserSync.init({ // Инициализация Browsersync
 		server: { baseDir: 'app/' }, // Указываем папку сервера
 		notify: false, // Отключаем уведомления
-		online: true // Режим работы: true или false
+		online: true, // Режим работы: true или false
+		tunnel: 'true' // Решение проблемы с подключением внешних устройств внутри сети
 	})
 }
 

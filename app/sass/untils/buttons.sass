@@ -24,6 +24,15 @@
 .button--white
     background-color: $WHITE
 
+.button--dark
+    background-color: $DARK
+
+.button__text--white
+    color: $WHITE
+
+.button__right-arrow--white
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%)
+
 .button--m-size
     padding: 18px 30px
 
@@ -32,6 +41,13 @@
 
 .button--white-smoke-border
     border: 1px solid $WHITE-SMOKE
+
+// EXAMPLE:
+// PUG:
+// a(href="").banner__button.button.button--white.button--m-size
+//     span.button__text SHOP THE FALL COLLECTION
+//     img(src="svg/right-arrow.svg", alt="").button__right-arrow
+
 
 // VIEW PRODUCT BUTTON
 .view-product-button
